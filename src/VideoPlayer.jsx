@@ -26,9 +26,7 @@ const VideoPlayer = () => {
       {!videoURL ? (
         <>
           <div style={styles.uploadBox} onClick={handleBoxClick}>
-            <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-              📺 Watch the Course
-            </span>
+            <span style={styles.boxText}>📺 Watch the Course</span>
           </div>
           <input
             type="file"
@@ -67,7 +65,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    backgroundColor: "#f5f5f5",
   },
   uploadBox: {
     width: "300px",
@@ -80,6 +77,12 @@ const styles = {
     cursor: "pointer",
     backgroundColor: "#ffffff",
     transition: "0.3s ease",
+  },
+  boxText: {
+    fontSize: "18px",
+    fontWeight: "bold",
+    color: "#007bff",
+    textAlign: "center",
   },
   playerWrapper: {
     width: "90vw",
