@@ -56,6 +56,9 @@ const LMSPlayer = () => {
             {/* Video Player Wrapper */}
             <div className="aspect-video bg-black rounded-lg overflow-hidden ">
               <ReactPlayer
+                config={{
+                  file: { attributes: { controlsList: "nodownload" } },
+                }}
                 url={videoURLs[currentVideoIndex]}
                 playing={isPlaying}
                 controls={true}
@@ -78,7 +81,7 @@ const LMSPlayer = () => {
                 disabled={currentVideoIndex === 0}
                 style={{ marginRight: "10px" }}
               >
-                <BiSkipPrevious size={30} /> 
+                <BiSkipPrevious size={30} />
               </button>
               <button
                 className="absolute top-[88%] left-[18%]"
