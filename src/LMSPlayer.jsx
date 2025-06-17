@@ -68,7 +68,9 @@ const lectures = [
 const LMSPlayer = () => {
   const [selectedLecture, setSelectedLecture] = useState(lectures[0]);
   const [activeAccordion, setActiveAccordion] = useState(null);
-  const [videoURL, setVideoURL] = useState(null);
+  const [videoURL, setVideoURL] = useState(
+    "https://www.youtube.com/embed/f7AtwOVEfuM?si=_6HVlrY8BGKuaVYK"
+  );
   const [isPlaying, setIsPlaying] = useState(false);
   const fileInputRef = useRef(null);
   const handleFileChange = (e) => {
