@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 import Footer from "./Footer";
 import Author from "./Author";
 import Accordian from "./Accordian";
-import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 const LMSPlayer = () => {
   const [videoURLs, setVideoURLs] = useState([
     "https://www.youtube.com/embed/f7AtwOVEfuM?si=_6HVlrY8BGKuaVYK",
@@ -28,14 +27,12 @@ const LMSPlayer = () => {
   const handleBoxClick = () => {
     fileInputRef.current.click();
   };
-
   const handleNext = () => {
     if (currentVideoIndex < videoURLs.length - 1) {
       setCurrentVideoIndex((prev) => prev + 1);
       setIsPlaying(true);
     }
   };
-
   const handlePrevious = () => {
     if (currentVideoIndex > 0) {
       setCurrentVideoIndex((prev) => prev - 1);
@@ -44,16 +41,10 @@ const LMSPlayer = () => {
   };
   return (
     <div className="bg-gray-900 min-h-screen text-white mx-9">
-      {/* Header */}
       <Navbar />
-
-      {/* Layout */}
       <div className="flex flex-col md:flex-row">
-        {/* Left: Video Player + Info */}
         <div className="w-full md:w-2/3 p-4">
-          {/* Video */}
           <div className="relative">
-            {/* Video Player Wrapper */}
             <div className="aspect-video bg-black rounded-lg overflow-hidden ">
               <ReactPlayer
                 config={{
@@ -73,35 +64,13 @@ const LMSPlayer = () => {
                 }}
               />
             </div>
-
-            {/* <div>
-              <button
-                className="absolute top-[88%] left-[15%]"
-                onClick={handlePrevious}
-                disabled={currentVideoIndex === 0}
-                style={{ marginRight: "10px" }}
-              >
-                <BiSkipPrevious size={30} />
-              </button>
-              <button
-                className="absolute top-[88%] left-[18%]"
-                onClick={handleNext}
-                disabled={currentVideoIndex === videoURLs.length - 1}
-              >
-                <BiSkipNext size={30} />
-              </button>
-            </div> */}
-            {/* Navigation Buttons */}
           </div>
 
-          {/* Info */}
           <div className="">
-            {/* Author Section */}
             <Author />
           </div>
         </div>
 
-        {/* Right: Accordion Lecture List */}
         <div className="w-full md:w-1/3 p-4 border-t md:border-t-0 md:border-l border-gray-700">
           <input
             type="file"
@@ -131,7 +100,6 @@ const LMSPlayer = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
