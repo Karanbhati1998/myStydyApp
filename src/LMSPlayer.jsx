@@ -106,6 +106,7 @@ const LMSPlayer = () => {
           {/* Video */}
           <div className="aspect-video bg-black rounded-lg overflow-hidden">
             <ReactPlayer
+              config={{ file: { attributes: { controlsList: "nodownload" } } }}
               url={videoURL}
               playing={isPlaying}
               controls={true}
@@ -190,8 +191,8 @@ const LMSPlayer = () => {
           <p className="text-lg font-semibold my-4">
             <p>
               This is a completely beginner-friendly Full Stack Course designed
-              to help students with Data Structures and Algorithms ,Javascript,React,Node,Express with 200+ hrs
-              of content.{" "}
+              to help students with Data Structures and Algorithms
+              ,Javascript,React,Node,Express with 200+ hrs of content.{" "}
             </p>
           </p>
           <h2 className="text-2xl font-semibold mb-4 mt-4">Syllabus</h2>
