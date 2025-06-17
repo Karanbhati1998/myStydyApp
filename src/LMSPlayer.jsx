@@ -5,58 +5,59 @@ import ReactPlayer from "react-player";
 const lectures = [
   {
     id: 1,
+    title: "Introduction to Javascript",
+    duration: "10:32",
+    description: "Learn what Javascript is and why it's useful.",
+  },
+  {
+    id: 2,
     title: "Introduction to React",
     duration: "10:32",
     description: "Learn what React is and why it's useful.",
   },
   {
-    id: 2,
+    id: 3,
     title: "Components & Props",
     duration: "14:20",
     description: "Understand how components and props work.",
   },
   {
-    id: 3,
+    id: 4,
     title: "State & Lifecycle",
     duration: "18:45",
     description: "Manage dynamic data with state and lifecycle.",
   },
   {
-    id: 4,
+    id: 5,
     title: "React Hooks",
     duration: "22:01",
     description: "Explore useState, useEffect and custom hooks.",
   },
   {
-    id: 5,
+    id: 6,
     title: "Handling Events",
     duration: "09:58",
     description: "Learn how to handle user events in React.",
   },
   {
-    id: 6,
+    id: 7,
     title: "Conditional Rendering",
     duration: "12:34",
     description: "Render content dynamically using conditions.",
   },
   {
-    id: 7,
+    id: 8,
     title: "Lists and Keys",
     duration: "11:27",
     description: "Render multiple elements using arrays and keys.",
   },
   {
-    id: 8,
+    id: 9,
     title: "Forms in React",
     duration: "16:45",
     description: "Build and manage forms with controlled components.",
   },
-  {
-    id: 9,
-    title: "Lifting State Up",
-    duration: "13:05",
-    description: "Share state between components using lifting state up.",
-  },
+
   {
     id: 10,
     title: "React Router Basics",
@@ -189,7 +190,7 @@ const LMSPlayer = () => {
           <p className="text-lg font-semibold my-4">
             <p>
               This is a completely beginner-friendly Full Stack Course designed
-              to help students with Data Structures and Algorithms with 200+ hrs
+              to help students with Data Structures and Algorithms ,Javascript,React,Node,Express with 200+ hrs
               of content.{" "}
             </p>
           </p>
