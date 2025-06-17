@@ -118,7 +118,7 @@ const LMSPlayer = () => {
           <div className="">
             {/* Author Section */}
             <div className="mt-12 px-4 md:px-9 py-4 bg-gray-900 rounded-lg text-white">
-              <h3 className="text-xl font-semibold mb-6">👨‍🏫 Author</h3>
+              <h3 className="text-xl font-semibold mb-6"> Author</h3>
               <div className="flex items-center gap-4">
                 {/* Author Avatar */}
                 <div className="w-12 h-12 relative rounded-full overflow-hidden">
@@ -132,9 +132,9 @@ const LMSPlayer = () => {
 
                 {/* Author Name and Description */}
                 <div className="flex flex-col">
-                  <h6 className="text-lg font-semibold">Sanket Singh</h6>
+                  <h6 className="text-lg font-semibold">Farz Ali</h6>
                   <p className="text-sm text-gray-300 mt-2 max-w-3xl leading-relaxed">
-                    Sanket Singh is a Software Engineer 2 at Microsoft and an
+                    Farz is a Software Engineer 2 at Microsoft and an
                     Ex-Software Engineer at Google. Prior to Google, he has
                     worked at LinkedIn and InterviewBit as well. He was selected
                     for Google Summer of Code under Harvard University in 2019.
@@ -188,7 +188,7 @@ const LMSPlayer = () => {
           <h1 className="text-3xl font-bold mb-4">Full Stack Course</h1>
           <p className="text-lg font-semibold my-4">
             <p>
-              This is a completely beginner-friendly javascript course designed
+              This is a completely beginner-friendly Full Stack Course designed
               to help students with Data Structures and Algorithms with 200+ hrs
               of content.{" "}
             </p>
