@@ -246,7 +246,12 @@ const LMSPlayer = () => {
               ,Javascript,React,Node,Express with 200+ hrs of content.{" "}
             </p>
           </p>
-          <h2 className="text-2xl font-semibold mb-4 mt-4">Syllabus</h2>
+          <h2
+            className="text-2xl font-semibold mb-4 mt-4"
+            onClick={handleBoxClick}
+          >
+            Syllabus
+          </h2>
           <div id="accordion-collapse">
             {lectures.map((lecture) => (
               <div
@@ -279,10 +284,7 @@ const LMSPlayer = () => {
                   </button>
                 </h2>
                 {activeAccordion === lecture.id && (
-                  <div
-                    className="p-4 text-gray-300 bg-gray-800 border-t border-gray-700"
-                    onClick={handleBoxClick}
-                  >
+                  <div className="p-4 text-gray-300 bg-gray-800 border-t border-gray-700">
                     <p>{lecture.description}</p>
                     <p className="text-sm text-gray-400 mt-1">
                       Duration: {lecture.duration}
