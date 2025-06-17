@@ -8,7 +8,10 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-8 py-4 bg-[#0b0e1c] text-white shadow-sm">
       {/* Logo */}
       <div className="flex items-center gap-7">
-        <div className="text-2xl font-bold">CodProg</div>
+        <div className="text-4xl font-bold">
+          <span className="text-[#BF8FFF]">Cod</span>
+          <span className="text-[#CEFF8F]">Prog</span>
+        </div>
 
         {/* Center Search & Theme */}
         <div className="flex items-center space-x-4 flex-1 justify-center">
