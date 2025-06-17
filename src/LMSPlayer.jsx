@@ -74,7 +74,7 @@ const LMSPlayer = () => {
               />
             </div>
 
-            <div>
+            {/* <div>
               <button
                 className="absolute top-[88%] left-[15%]"
                 onClick={handlePrevious}
@@ -90,7 +90,7 @@ const LMSPlayer = () => {
               >
                 <BiSkipNext size={30} />
               </button>
-            </div>
+            </div> */}
             {/* Navigation Buttons */}
           </div>
 
