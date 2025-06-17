@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 import Footer from "./Footer";
 import Author from "./Author";
 import Accordian from "./Accordian";
-
+import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 const LMSPlayer = () => {
   const [videoURLs, setVideoURLs] = useState([
     "https://www.youtube.com/embed/f7AtwOVEfuM?si=_6HVlrY8BGKuaVYK",
@@ -52,21 +52,43 @@ const LMSPlayer = () => {
         {/* Left: Video Player + Info */}
         <div className="w-full md:w-2/3 p-4">
           {/* Video */}
-          <div className="aspect-video bg-black rounded-lg overflow-hidden">
-            <ReactPlayer
-              url={videoURLs[currentVideoIndex]}
-              playing={isPlaying}
-              controls={true}
-              width="100%"
-              height="100%"
-              onEnded={() => {
-                if (currentVideoIndex < videoURLs.length - 1) {
-                  setCurrentVideoIndex((prev) => prev + 1);
-                } else {
-                  setIsPlaying(false);
-                }
-              }}
-            />
+          <div className="relative">
+            {/* Video Player Wrapper */}
+            <div className="aspect-video bg-black rounded-lg overflow-hidden ">
+              <ReactPlayer
+                url={videoURLs[currentVideoIndex]}
+                playing={isPlaying}
+                controls={true}
+                width="100%"
+                height="100%"
+                onEnded={() => {
+                  if (currentVideoIndex < videoURLs.length - 1) {
+                    setCurrentVideoIndex((prev) => prev + 1);
+                  } else {
+                    setIsPlaying(false);
+                  }
+                }}
+              />
+            </div>
+
+            <div>
+              <button
+                className="absolute top-[88%] left-[15%]"
+                onClick={handlePrevious}
+                disabled={currentVideoIndex === 0}
+                style={{ marginRight: "10px" }}
+              >
+                <BiSkipPrevious size={30} /> 
+              </button>
+              <button
+                className="absolute top-[88%] left-[18%]"
+                onClick={handleNext}
+                disabled={currentVideoIndex === videoURLs.length - 1}
+              >
+                <BiSkipNext size={30} />
+              </button>
+            </div>
+            {/* Navigation Buttons */}
           </div>
 
           {/* Info */}
