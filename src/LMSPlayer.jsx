@@ -46,7 +46,8 @@ const LMSPlayer = () => {
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 p-4">
           <div className="relative">
-            <div className="aspect-video bg-black rounded-lg overflow-hidden ">
+            {/* Video container */}
+            <div className="aspect-video bg-black rounded-lg overflow-hidden">
               <ReactPlayer
                 config={{
                   file: { attributes: { controlsList: "nodownload" } },
@@ -65,6 +66,9 @@ const LMSPlayer = () => {
                 }}
               />
             </div>
+
+            {/* Simple dark transparent overlay */}
+            <div className="absolute inset-0 bg-black/60  rounded-lg pointer-events-none" />
           </div>
 
           <div className="">
