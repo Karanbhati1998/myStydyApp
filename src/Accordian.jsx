@@ -62,7 +62,46 @@ const lectures = [
     description: "Navigate between pages with React Router.",
   },
 ];
-const Accordian = () => {
+const Englishlectures = [
+  {
+    id: 1,
+    title: "Introduction to English",
+    duration: "51:32",
+    description: "Learn what English is and why it's useful.",
+  },
+
+  {
+    id: 3,
+    title: "Noun",
+    duration: "14:20",
+    description: "Understand Noun",
+  },
+  {
+    id: 4,
+    title: "Verb",
+    duration: "18:45",
+    description: "",
+  },
+  {
+    id: 5,
+    title: "Tenses",
+    duration: "22:01",
+    description: "Explore Tenses.",
+  },
+  {
+    id: 6,
+    title: "Modal",
+    duration: "09:58",
+    description: "",
+  },
+  {
+    id: 7,
+    title: "Conditional Sentences",
+    duration: "12:34",
+    description: "",
+  },
+];
+const Accordian = ({ theme }) => {
   const [selectedLecture, setSelectedLecture] = useState(lectures[0]);
   const [activeAccordion, setActiveAccordion] = useState(null);
   const toggleAccordion = (id) => {
@@ -71,46 +110,87 @@ const Accordian = () => {
   };
   return (
     <div id="accordion-collapse">
-      {lectures.map((lecture) => (
-        <div
-          key={lecture.id}
-          className="mb-2 border border-gray-700 rounded-lg"
-        >
-          <h2>
-            <button
-              type="button"
-              onClick={() => toggleAccordion(lecture.id)}
-              className="flex items-center justify-between w-full p-4 font-medium text-left text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
-              aria-expanded={activeAccordion === lecture.id}
+      {theme
+        ? lectures.map((lecture) => (
+            <div
+              key={lecture.id}
+              className="mb-2 border border-gray-700 rounded-lg"
             >
-              <span>{lecture.title}</span>
-              <svg
-                className={`w-4 h-4 transform transition-transform duration-300 ${
-                  activeAccordion === lecture.id ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-          </h2>
-          {activeAccordion === lecture.id && (
-            <div className="p-4 text-gray-300 bg-gray-800 border-t border-gray-700">
-              <p>{lecture.description}</p>
-              <p className="text-sm text-gray-400 mt-1">
-                Duration: {lecture.duration}
-              </p>
+              <h2>
+                <button
+                  type="button"
+                  onClick={() => toggleAccordion(lecture.id)}
+                  className="flex items-center justify-between w-full p-4 font-medium text-left text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
+                  aria-expanded={activeAccordion === lecture.id}
+                >
+                  <span>{lecture.title}</span>
+                  <svg
+                    className={`w-4 h-4 transform transition-transform duration-300 ${
+                      activeAccordion === lecture.id ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              {activeAccordion === lecture.id && (
+                <div className="p-4 text-gray-300 bg-gray-800 border-t border-gray-700">
+                  <p>{lecture.description}</p>
+                  <p className="text-sm text-gray-400 mt-1">
+                    Duration: {lecture.duration}
+                  </p>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      ))}
+          ))
+        : Englishlectures.map((lecture) => (
+            <div
+              key={lecture.id}
+              className="mb-2 border border-gray-700 rounded-lg"
+            >
+              <h2>
+                <button
+                  type="button"
+                  onClick={() => toggleAccordion(lecture.id)}
+                  className="flex items-center justify-between w-full p-4 font-medium text-left text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
+                  aria-expanded={activeAccordion === lecture.id}
+                >
+                  <span>{lecture.title}</span>
+                  <svg
+                    className={`w-4 h-4 transform transition-transform duration-300 ${
+                      activeAccordion === lecture.id ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              {activeAccordion === lecture.id && (
+                <div className="p-4 text-gray-300 bg-gray-800 border-t border-gray-700">
+                  <p>{lecture.description}</p>
+                  <p className="text-sm text-gray-400 mt-1">
+                    Duration: {lecture.duration}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
     </div>
   );
 };

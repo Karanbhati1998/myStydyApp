@@ -97,7 +97,7 @@ const LMSPlayer = () => {
           >
             Syllabus
           </h2>
-          <Accordian />
+          <Accordian theme={theme} />
         </div>
       </div>
 
