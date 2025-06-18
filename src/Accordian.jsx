@@ -110,7 +110,7 @@ const Accordian = ({ theme }) => {
   };
   return (
     <div id="accordion-collapse">
-      {theme
+      {theme == "LIGHT"
         ? lectures.map((lecture) => (
             <div
               key={lecture.id}

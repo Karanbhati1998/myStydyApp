@@ -5,12 +5,12 @@ import Footer from "./Footer";
 import Author from "./Author";
 import Accordian from "./Accordian";
 const LMSPlayer = () => {
+  const [theme, setTheme] = useState("LIGHT");
   const [videoURLs, setVideoURLs] = useState([
     "https://www.youtube.com/embed/f7AtwOVEfuM?si=_6HVlrY8BGKuaVYK",
   ]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [theme, setTheme] = useState("LIGHT");
   const fileInputRef = useRef(null);
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
