@@ -10,6 +10,7 @@ const LMSPlayer = () => {
   ]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [theme, setTheme] = useState("LIGHT");
   const fileInputRef = useRef(null);
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
@@ -41,7 +42,7 @@ const LMSPlayer = () => {
   };
   return (
     <div className="bg-gray-900 min-h-screen text-white mx-9">
-      <Navbar />
+      <Navbar setTheme={setTheme} theme={theme} />
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 p-4">
           <div className="relative">
@@ -81,13 +82,13 @@ const LMSPlayer = () => {
             style={{ display: "none" }}
           />
           <h1 className="text-3xl font-bold mb-4" onClick={handlePrevious}>
-            Full Stack Course
+            {theme == "LIGHT" ? "Full Stack Course" : "English Course"}
           </h1>
           <p className="text-lg font-semibold my-4">
             <p onClick={handleNext}>
-              This is a completely beginner-friendly Full Stack Course designed
-              to help students with Data Structures and Algorithms
-              ,Javascript,React,Node,Express with 200+ hrs of content.{" "}
+              {theme == "LIGHT"
+                ? " This is a completely beginner-friendly Full Stack Course designed to help students with Data Structures and Algorithms ,Javascript,React,Node,Express with 200+ hrs of content."
+                : "This is a completely beginner-friendly English Course designed to help students  with 200+ hrs of content."}
             </p>
           </p>
           <h2

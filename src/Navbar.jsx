@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { MdOutlineWbSunny } from "react-icons/md";
 
-const Navbar = () => {
-  const [theme, setTheme] = useState("LIGHT");
-
+const Navbar = ({ theme, setTheme }) => {
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-[#0b0e1c] text-white shadow-sm">
       {/* Logo */}
       <div className="flex items-center gap-7">
         <div className="text-4xl font-bold">
-          <span className="text-[#BF8FFF]">Cod</span>
-          <span className="text-[#CEFF8F]">Prog</span>
+          {theme == "LIGHT" ? (
+            <>
+              <span className="text-[#BF8FFF]">Cod</span>
+              <span className="text-[#CEFF8F]">Prog</span>
+            </>
+          ) : (
+            "We Can Talk"
+          )}
         </div>
 
         {/* Center Search & Theme */}
