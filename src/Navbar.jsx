@@ -14,7 +14,7 @@ const Navbar = ({ theme, setTheme }) => {
             </>
           ) : (
             <>
-              <span className="text-[#BF8FFF]">We</span>
+              <span className="text-[#BF8FFF]">We </span>
               <span className="text-[#CEFF8F]">Can Talk</span>
             </>
           )}
