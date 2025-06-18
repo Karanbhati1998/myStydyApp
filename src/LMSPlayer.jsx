@@ -6,6 +6,7 @@ import Author from "./Author";
 import Accordian from "./Accordian";
 const LMSPlayer = () => {
   const [theme, setTheme] = useState("LIGHT");
+  const [addOverLay, setAddOverLay] = useState(true);
   const [videoURLs, setVideoURLs] = useState([
     "https://www.youtube.com/embed/f7AtwOVEfuM?si=_6HVlrY8BGKuaVYK",
   ]);
@@ -42,7 +43,7 @@ const LMSPlayer = () => {
   };
   return (
     <div className="bg-gray-900 min-h-screen text-white mx-9">
-      <Navbar setTheme={setTheme} theme={theme} />
+      <Navbar setTheme={setTheme} theme={theme} setAddOverLay={setAddOverLay} />
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 p-4">
           <div className="relative">
@@ -68,7 +69,9 @@ const LMSPlayer = () => {
             </div>
 
             {/* Simple dark transparent overlay */}
-            <div className="absolute inset-0 bg-black/60  rounded-lg pointer-events-none" />
+            {addOverLay && (
+              <div className="absolute inset-0 bg-black/60  rounded-lg pointer-events-none" />
+            )}
           </div>
 
           <div className="">
