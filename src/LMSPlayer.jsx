@@ -6,12 +6,12 @@ import Author from "./Author";
 import Accordian from "./Accordian";
 const LMSPlayer = () => {
   const [theme, setTheme] = useState("LIGHT");
-  const [addOverLay, setAddOverLay] = useState(true);
   const [videoURLs, setVideoURLs] = useState([
     "https://www.youtube.com/embed/f7AtwOVEfuM?si=_6HVlrY8BGKuaVYK",
   ]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [overlayOpacity, setOverlayOpacity] = useState(60); // default 60%
   const fileInputRef = useRef(null);
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
@@ -43,7 +43,7 @@ const LMSPlayer = () => {
   };
   return (
     <div className="bg-gray-900 min-h-screen text-white mx-9">
-      <Navbar setTheme={setTheme} theme={theme} setAddOverLay={setAddOverLay} />
+      <Navbar setTheme={setTheme} theme={theme}  />
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 p-4">
           <div className="relative">
@@ -69,11 +69,24 @@ const LMSPlayer = () => {
             </div>
 
             {/* Simple dark transparent overlay */}
-            {addOverLay && (
-              <div className="absolute inset-0 bg-black/60  rounded-lg pointer-events-none" />
-            )}
+            <div
+              className="absolute inset-0  rounded-lg pointer-events-none"
+              style={{
+                backgroundColor: `rgba(0,0,0,${overlayOpacity / 100})`,
+              }}
+            />
           </div>
-
+          <div className="mt-10">
+            <label className="block mb-2"></label>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={overlayOpacity}
+              onChange={(e) => setOverlayOpacity(e.target.value)}
+              className="w-full"
+            />
+          </div>
           <div className="">
             <Author />
           </div>
@@ -104,6 +117,7 @@ const LMSPlayer = () => {
           >
             Syllabus
           </h2>
+
           <Accordian theme={theme} />
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { TbRuler } from "react-icons/tb";
 
-const Navbar = ({ theme, setTheme, setAddOverLay }) => {
+const Navbar = ({ theme, setTheme }) => {
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-[#0b0e1c] text-white shadow-sm">
       {/* Logo */}
@@ -61,10 +61,7 @@ const Navbar = ({ theme, setTheme, setAddOverLay }) => {
 
       {/* Right Auth Buttons */}
       <div className="flex items-center space-x-3">
-        <button
-          className="px-4 py-2 border border-teal-300 text-teal-300 rounded hover:bg-teal-900 transition font-semibold"
-          onClick={() => setAddOverLay((prev) => !prev)}
-        >
+        <button className="px-4 py-2 border border-teal-300 text-teal-300 rounded hover:bg-teal-900 transition font-semibold">
           SIGN IN
         </button>
         <button className="px-4 py-2 bg-teal-300 text-gray-900 rounded hover:bg-teal-200 transition font-semibold">
