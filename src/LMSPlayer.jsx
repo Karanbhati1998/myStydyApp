@@ -43,12 +43,12 @@ const LMSPlayer = () => {
   };
   return (
     <div className="bg-gray-900 min-h-screen text-white mx-9">
-      <Navbar setTheme={setTheme} theme={theme}  />
+      <Navbar setTheme={setTheme} theme={theme} />
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 p-4">
           <div className="relative">
             {/* Video container */}
-            <div className="aspect-video bg-black rounded-lg overflow-hidden">
+            <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
               <ReactPlayer
                 config={{
                   file: { attributes: { controlsList: "nodownload" } },
@@ -64,6 +64,14 @@ const LMSPlayer = () => {
                   } else {
                     setIsPlaying(false);
                   }
+                }}
+              />
+
+              {/* Simple dark transparent overlay */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundColor: `rgba(0,0,0,${overlayOpacity / 100})`,
                 }}
               />
             </div>
