@@ -46,45 +46,25 @@ const LMSPlayer = () => {
       <Navbar setTheme={setTheme} theme={theme} />
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 p-4">
-          <div className="relative">
-            {/* Video container */}
-            <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
-              <ReactPlayer
-                config={{
-                  file: { attributes: { controlsList: "nodownload" } },
-                }}
-                url={videoURLs[currentVideoIndex]}
-                playing={isPlaying}
-                controls={true}
-                width="100%"
-                height="100%"
-                onEnded={() => {
-                  if (currentVideoIndex < videoURLs.length - 1) {
-                    setCurrentVideoIndex((prev) => prev + 1);
-                  } else {
-                    setIsPlaying(false);
-                  }
-                }}
+          <div className="relative w-full max-w-6xl mx-auto">
+            <div className="relative pb-[56.25%] bg-black rounded-lg overflow-hidden">
+              <video
+                src={videoURLs[currentVideoIndex]}
+                autoPlay
+                controls
+                controlsList="nodownload"
+                className="absolute top-0 left-0 w-full h-full object-cover"
               />
-
-              {/* Simple dark transparent overlay */}
               <div
-                className="absolute inset-0 pointer-events-none"
+                className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 rounded-lg"
                 style={{
-                  backgroundColor: `rgba(0,0,0,${overlayOpacity / 100})`,
+                  backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
                 }}
               />
             </div>
-
-            {/* Simple dark transparent overlay */}
-            <div
-              className="absolute inset-0  rounded-lg pointer-events-none"
-              style={{
-                backgroundColor: `rgba(0,0,0,${overlayOpacity / 100})`,
-              }}
-            />
           </div>
-          <div className="mt-10">
+
+          <div className="mt-4">
             <label className="block mb-2"></label>
             <input
               type="range"
