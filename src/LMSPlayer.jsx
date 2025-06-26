@@ -90,7 +90,7 @@ const LMSPlayer = () => {
             style={{ display: "none" }}
           />
           <h1 className="text-3xl font-bold mb-4" onClick={handlePrevious}>
-            {theme == "LIGHT" ? "Full Stack Course" : "English Course"}
+            {theme == "LIGHT" ? "Full Stack Course" : " Course"}
           </h1>
           <p className="text-lg font-semibold my-4">
             <p onClick={handleNext}>
